@@ -1445,13 +1445,21 @@ Encryption provides a means to secure the remote connection to prevent unauthori
 <td xml:lang="en-US">The <code>RekeyLimit</code> parameter specifies how often
 the session key of the is renegotiated, both in terms of
 amount of data that may be transmitted and the time
-elapsed. To decrease the default limits, put line
-<code>RekeyLimit <xccdf-1.1:sub xmlns:xccdf-1.1="http://checklists.nist.gov/xccdf/1.1" idref="var_rekey_limit_size"></xccdf-1.1:sub> <xccdf-1.1:sub xmlns:xccdf-1.1="http://checklists.nist.gov/xccdf/1.1" idref="var_rekey_limit_time"></xccdf-1.1:sub></code> to file <code>/etc/ssh/sshd_config</code>.</td>
+elapsed.<br>
+To decrease the default limits, add or correct the following line in
+
+
+<code>/etc/ssh/sshd_config</code>:
+
+<pre>RekeyLimit <xccdf-1.1:sub xmlns:xccdf-1.1="http://checklists.nist.gov/xccdf/1.1" idref="var_rekey_limit_size"></xccdf-1.1:sub> <xccdf-1.1:sub xmlns:xccdf-1.1="http://checklists.nist.gov/xccdf/1.1" idref="var_rekey_limit_time"></xccdf-1.1:sub></pre>
+</td>
 <td>Applicable - Configurable</td>
 <td>Verify the operating system implements DoD-approved encryption to protect the confidentiality of remote access sessions. If it does not, this is a finding.</td>
 <td>To check if RekeyLimit is set correctly, run the
 following command:
+
 $ sudo grep RekeyLimit /etc/ssh/sshd_config
+
 If configured properly, output should be
 RekeyLimit  
       Is it the case that it is commented out or is not set?
@@ -1460,8 +1468,13 @@ RekeyLimit
 <td>The RekeyLimit parameter specifies how often
 the session key of the is renegotiated, both in terms of
 amount of data that may be transmitted and the time
-elapsed. To decrease the default limits, put line
-RekeyLimit   to file /etc/ssh/sshd_config.</td>
+elapsed.
+To decrease the default limits, add or correct the following line in
+
+
+/etc/ssh/sshd_config:
+
+RekeyLimit  </td>
 <td>medium</td>
 <td></td>
 <td></td>
@@ -23233,13 +23246,21 @@ Configuration settings are the set of parameters that can be changed in hardware
 <td xml:lang="en-US">The <code>RekeyLimit</code> parameter specifies how often
 the session key of the is renegotiated, both in terms of
 amount of data that may be transmitted and the time
-elapsed. To decrease the default limits, put line
-<code>RekeyLimit <xccdf-1.1:sub xmlns:xccdf-1.1="http://checklists.nist.gov/xccdf/1.1" idref="var_rekey_limit_size"></xccdf-1.1:sub> <xccdf-1.1:sub xmlns:xccdf-1.1="http://checklists.nist.gov/xccdf/1.1" idref="var_rekey_limit_time"></xccdf-1.1:sub></code> to file <code>/etc/ssh/sshd_config</code>.</td>
+elapsed.<br>
+To decrease the default limits, add or correct the following line in
+
+
+<code>/etc/ssh/sshd_config</code>:
+
+<pre>RekeyLimit <xccdf-1.1:sub xmlns:xccdf-1.1="http://checklists.nist.gov/xccdf/1.1" idref="var_rekey_limit_size"></xccdf-1.1:sub> <xccdf-1.1:sub xmlns:xccdf-1.1="http://checklists.nist.gov/xccdf/1.1" idref="var_rekey_limit_time"></xccdf-1.1:sub></pre>
+</td>
 <td>Applicable - Configurable</td>
 <td>Verify the operating system is configured in accordance with the security configuration settings based on DoD security configuration or implementation guidance, including STIGs, NSA configuration guides, CTOs, and DTMs. If it is not, this is a finding.</td>
 <td>To check if RekeyLimit is set correctly, run the
 following command:
+
 $ sudo grep RekeyLimit /etc/ssh/sshd_config
+
 If configured properly, output should be
 RekeyLimit  
       Is it the case that it is commented out or is not set?
@@ -23248,8 +23269,13 @@ RekeyLimit
 <td>The RekeyLimit parameter specifies how often
 the session key of the is renegotiated, both in terms of
 amount of data that may be transmitted and the time
-elapsed. To decrease the default limits, put line
-RekeyLimit   to file /etc/ssh/sshd_config.</td>
+elapsed.
+To decrease the default limits, add or correct the following line in
+
+
+/etc/ssh/sshd_config:
+
+RekeyLimit  </td>
 <td>medium</td>
 <td></td>
 <td></td>
