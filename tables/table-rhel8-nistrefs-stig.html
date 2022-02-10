@@ -2463,7 +2463,7 @@ The DoD STIG requirement is 5 passwords.
   <td xml:lang="en-US">
 Preventing re-use of previous passwords helps ensure that a compromised password is not re-used by a user.
   </td>
-  <td>var_password_pam_remember=5<br/>var_password_pam_remember_control_flag=required</td>
+  <td>var_password_pam_remember_control_flag=required<br/>var_password_pam_remember=5</td>
 </tr>
 <tr>
   <td>IA-5(f)<br/>IA-5(1)(e)</td>
@@ -2483,7 +2483,7 @@ The DoD STIG requirement is 5 passwords.
   <td xml:lang="en-US">
 Preventing re-use of previous passwords helps ensure that a compromised password is not re-used by a user.
   </td>
-  <td>var_password_pam_remember=5<br/>var_password_pam_remember_control_flag=required</td>
+  <td>var_password_pam_remember_control_flag=required<br/>var_password_pam_remember=5</td>
 </tr>
 <tr>
   <td>IA-5(c)<br/>IA-5(1)(a)<br/>CM-6(a)<br/>IA-5(4)</td>
@@ -3144,10 +3144,8 @@ for purposes of initiating changes, including upgrades and modifications.
   <td>Ensure PAM Enforces Password Requirements - Authentication Retry Prompts Permitted Per-Session</td>
   <td xml:lang="en-US">
 To configure the number of retry prompts that are permitted per-session:
-Edit the <tt>pam_pwquality.so</tt> statement in
 
-<tt>/etc/pam.d/system-auth</tt>  and
-<tt>/etc/pam.d/password-auth</tt>  to show
+Edit the <tt>/etc/security/pwquality.conf</tt> to include
 
 <tt>retry=<tt>3</tt></tt>, or a lower value if site
 policy is more restrictive. The DoD requirement is a maximum of 3 prompts
@@ -7101,6 +7099,38 @@ parameter in <tt>/etc/login.defs</tt> to <tt>yes</tt> as follows:
   <td xml:lang="en-US">
 If local interactive users are not assigned a valid home directory, there is no place
 for the storage and control of files they should own.
+  </td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td>CCE-85877-9</td>
+  <td>Ensure PAM password complexity module is enabled in password-auth</td>
+  <td xml:lang="en-US">
+To enable PAM password complexity in password-auth file:
+Edit the <tt>password</tt> section in
+<tt>/etc/pam.d/password-auth</tt> to show
+<tt>password    requisite                                    pam_pwquality.so</tt>.
+  </td>
+  <td xml:lang="en-US">
+Enabling PAM password complexity permits to enforce strong passwords and consequently
+makes the system less prone to dictionary attacks.
+  </td>
+  <td></td>
+</tr>
+<tr>
+  <td></td>
+  <td>CCE-85872-0</td>
+  <td>Ensure PAM password complexity module is enabled in system-auth</td>
+  <td xml:lang="en-US">
+To enable PAM password complexity in system-auth file:
+Edit the <tt>password</tt> section in
+<tt>/etc/pam.d/system-auth</tt> to show
+<tt>password    requisite                                    pam_pwquality.so</tt>.
+  </td>
+  <td xml:lang="en-US">
+Enabling PAM password complexity permits to enforce strong passwords and consequently
+makes the system less prone to dictionary attacks.
   </td>
   <td></td>
 </tr>
