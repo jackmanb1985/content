@@ -16139,6 +16139,20 @@ settings in
 And make sure that the <code>silent</code> option is not set.</td>
 </tr></table>
 <table><tr>
+<td>Ensure PAM password complexity module is enabled in password-auth</td>
+<td xml:lang="en-US">To enable PAM password complexity in password-auth file:
+Edit the <code>password</code> section in
+<code>/etc/pam.d/password-auth</code> to show
+<code>password    requisite                                    pam_pwquality.so</code>.</td>
+</tr></table>
+<table><tr>
+<td>Ensure PAM password complexity module is enabled in system-auth</td>
+<td xml:lang="en-US">To enable PAM password complexity in system-auth file:
+Edit the <code>password</code> section in
+<code>/etc/pam.d/system-auth</code> to show
+<code>password    requisite                                    pam_pwquality.so</code>.</td>
+</tr></table>
+<table><tr>
 <td>Disable debug-shell SystemD Service</td>
 <td xml:lang="en-US">SystemD's <code>debug-shell</code> service is intended to
 diagnose SystemD related boot issues with various <code>systemctl</code>
