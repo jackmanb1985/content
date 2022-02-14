@@ -7582,27 +7582,15 @@ also include <code>suspend</code>, <code>single</code>, and <code>halt</code>.</
 <td>1891</td>
 <td>medium</td>
 <td>RHEL 8 must securely compare internal information system clocks at least every 24 hours with a server synchronized to an authoritative time source, such as the United States Naval Observatory (USNO) time servers, or a time server designated for the appropriate DoD network (NIPRNet/SIPRNet), and/or the Global Positioning System (GPS).</td>
-<td>Inaccurate time stamps make it more difficult to correlate
-events and can lead to an inaccurate analysis. Determining the correct
-time a particular event occurred on a system is critical when conducting
-forensic analysis and investigating system events. Sources outside the
-configured acceptable allowance (drift) may be inaccurate.</td>
-<td>To verify that maxpoll has been set properly, perform the following:
-$ sudo grep maxpoll /etc/ntp.conf /etc/chrony.conf
-The output should return
-maxpoll .
-      Is it the case that it does not exist or maxpoll has not been set to the expected value?
+<td>Depending on the infrastruture being used the <code>pool</code> directive may not be supported.</td>
+<td>Run the following command and verify that time sources are only configure with server directive:
+# grep -E "^(server|pool)" /etc/chrony.conf
+A line with the appropriate server should be returned, any line returned starting with pool is a finding.
+      Is it the case that a remote time server is not configured or configured with pool directive?
       </td>
-<td>The <code>maxpoll</code> should be configured to
-<xccdf-1.1:sub xmlns:xccdf-1.1="http://checklists.nist.gov/xccdf/1.1" idref="var_time_service_set_maxpoll"></xccdf-1.1:sub> in <code>/etc/ntp.conf</code> or
-<code>/etc/chrony.conf</code> to continuously poll time servers. To configure
-<code>maxpoll</code> in <code>/etc/ntp.conf</code> or <code>/etc/chrony.conf</code>
-add the following:
-<pre>maxpoll <xccdf-1.1:sub xmlns:xccdf-1.1="http://checklists.nist.gov/xccdf/1.1" idref="var_time_service_set_maxpoll"></xccdf-1.1:sub></pre>
-to <pre>server</pre> directives. If using chrony any <pre>pool</pre> directives
-should be configured too.</td>
+<td>Check that Chrony only has time sources configured with the <code>server</code> directive.</td>
 <td>RHEL-08-030740</td>
-<td>chronyd_or_ntpd_set_maxpoll</td>
+<td>chronyd_server_directive</td>
 </tr>
 <tr>
 <td>V-230485</td>
