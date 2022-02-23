@@ -22,3 +22,4 @@ kubelet_enable_streaming_connections
 kubelet_read_only_port_secured
 read_only_registry_access
 registry_access
+secret_encryption
