@@ -2593,7 +2593,10 @@ form to <code>/etc/audit/audit.rules</code>:
 <td>medium</td>
 <td>Ensure auditd Collects System Administrator Actions - /etc/sudoers</td>
 <td xml:lang="en-US">The actions taken by system administrators should be audited to keep a record
-of what was executed on the system, as well as, for accountability purposes.</td>
+of what was executed on the system, as well as, for accountability purposes.
+Editing the sudoers file may be sign of an attacker trying to
+establish persistent methods to a system, auditing the editing of the sudoers
+files mitigates this risk.</td>
 <td xml:lang="en-US">At a minimum, the audit system should collect administrator actions
 for all users and root. If the <code>auditd</code> daemon is configured to use the
 <code>augenrules</code> program to read audit rules during daemon startup (the default),
@@ -2616,7 +2619,10 @@ utility to read audit rules during daemon startup, add the following line to
 <td>medium</td>
 <td>Ensure auditd Collects System Administrator Actions - /etc/sudoers.d/</td>
 <td xml:lang="en-US">The actions taken by system administrators should be audited to keep a record
-of what was executed on the system, as well as, for accountability purposes.</td>
+of what was executed on the system, as well as, for accountability purposes.
+Editing the sudoers file may be sign of an attacker trying to
+establish persistent methods to a system, auditing the editing of the sudoers
+files mitigates this risk.</td>
 <td xml:lang="en-US">At a minimum, the audit system should collect administrator actions
 for all users and root. If the <code>auditd</code> daemon is configured to use the
 <code>augenrules</code> program to read audit rules during daemon startup (the default),

@@ -7446,6 +7446,9 @@ utility to read audit rules during daemon startup, add the following line to
   <td xml:lang="en-US">
 The actions taken by system administrators should be audited to keep a record
 of what was executed on the system, as well as, for accountability purposes.
+Editing the sudoers file may be sign of an attacker trying to
+establish persistent methods to a system, auditing the editing of the sudoers
+files mitigates this risk.
   </td>
   <td></td>
 </tr>
@@ -7468,6 +7471,9 @@ utility to read audit rules during daemon startup, add the following line to
   <td xml:lang="en-US">
 The actions taken by system administrators should be audited to keep a record
 of what was executed on the system, as well as, for accountability purposes.
+Editing the sudoers file may be sign of an attacker trying to
+establish persistent methods to a system, auditing the editing of the sudoers
+files mitigates this risk.
   </td>
   <td></td>
 </tr>
@@ -8153,7 +8159,7 @@ By decreasing the limit based on the amount of data and enabling
 time-based limit, effects of potential attacks against
 encryption keys are limited.
   </td>
-  <td>var_rekey_limit_time=1hour<br/>var_rekey_limit_size=1G</td>
+  <td>var_rekey_limit_size=1G<br/>var_rekey_limit_time=1hour</td>
 </tr>
 <tr>
   <td></td>
