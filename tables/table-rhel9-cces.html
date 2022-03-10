@@ -8079,10 +8079,24 @@ filesystems the following command can be run manually for each partition:
 </td>
 </tr>
 <tr>
+<td>CCE-85884-5</td>
+<td>Enable Kernel Parameter to Enforce DAC on FIFOs</td>
+<td xml:lang="en-US">To set the runtime status of the <code>fs.protected_fifos</code> kernel parameter, run the following command: <pre>$ sudo sysctl -w fs.protected_fifos=2</pre>
+To make sure that the setting is persistent, add the following line to a file in the directory <code>/etc/sysctl.d</code>: <pre>fs.protected_fifos = 2</pre>
+</td>
+</tr>
+<tr>
 <td>CCE-84110-6</td>
 <td>Enable Kernel Parameter to Enforce DAC on Hardlinks</td>
 <td xml:lang="en-US">To set the runtime status of the <code>fs.protected_hardlinks</code> kernel parameter, run the following command: <pre>$ sudo sysctl -w fs.protected_hardlinks=1</pre>
 To make sure that the setting is persistent, add the following line to a file in the directory <code>/etc/sysctl.d</code>: <pre>fs.protected_hardlinks = 1</pre>
+</td>
+</tr>
+<tr>
+<td>CCE-85885-2</td>
+<td>Enable Kernel Parameter to Enforce DAC on Regular files</td>
+<td xml:lang="en-US">To set the runtime status of the <code>fs.protected_regular</code> kernel parameter, run the following command: <pre>$ sudo sysctl -w fs.protected_regular=2</pre>
+To make sure that the setting is persistent, add the following line to a file in the directory <code>/etc/sysctl.d</code>: <pre>fs.protected_regular = 2</pre>
 </td>
 </tr>
 <tr>

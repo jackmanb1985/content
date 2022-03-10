@@ -976,7 +976,9 @@ sudo_require_authentication
 sudo_require_reauthentication
 sudoers_default_includedir
 sudoers_validate_passwd
+sysctl_fs_protected_fifos
 sysctl_fs_protected_hardlinks
+sysctl_fs_protected_regular
 sysctl_fs_protected_symlinks
 sysctl_fs_suid_dumpable
 sysctl_kernel_core_pattern
