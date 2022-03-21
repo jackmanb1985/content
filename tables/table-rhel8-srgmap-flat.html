@@ -15815,7 +15815,13 @@ To properly set the permissions of <code>/etc/audit/auditd.conf</code>, run the 
 </td>
 <td>Applicable - Configurable</td>
 <td>Verify the operating system allows only the ISSM (or individuals or roles appointed by the ISSM) to select which auditable events are to be audited. If it does not, this is a finding.</td>
-<td></td>
+<td>To check the permissions of /etc/audit/auditd.conf,
+run the command:
+$ ls -l /etc/audit/auditd.conf
+If properly configured, the output should indicate the following permissions:
+-rw-r-----
+      Is it the case that /etc/audit/auditd.conf has unix mode -rw-r-----?
+      </td>
 <td><fixtext xmlns="http://checklists.nist.gov/xccdf/1.1" fixref="F-3745r557585_fix">Configure the operating system to allow only the ISSM (or individuals or roles appointed by the ISSM) to select which auditable events are to be audited.</fixtext></td>
 <td>
 To properly set the permissions of /etc/audit/auditd.conf, run the command:
@@ -15838,7 +15844,13 @@ To properly set the permissions of <code>/etc/audit/rules.d/*.rules</code>, run 
 </td>
 <td>Applicable - Configurable</td>
 <td>Verify the operating system allows only the ISSM (or individuals or roles appointed by the ISSM) to select which auditable events are to be audited. If it does not, this is a finding.</td>
-<td></td>
+<td>To check the permissions of /etc/audit/rules.d/*.rules,
+run the command:
+$ ls -l /etc/audit/rules.d/*.rules
+If properly configured, the output should indicate the following permissions:
+-rw-r-----
+      Is it the case that /etc/audit/rules.d/*.rules has unix mode -rw-r-----?
+      </td>
 <td><fixtext xmlns="http://checklists.nist.gov/xccdf/1.1" fixref="F-3745r557585_fix">Configure the operating system to allow only the ISSM (or individuals or roles appointed by the ISSM) to select which auditable events are to be audited.</fixtext></td>
 <td>
 To properly set the permissions of /etc/audit/rules.d/*.rules, run the command:
