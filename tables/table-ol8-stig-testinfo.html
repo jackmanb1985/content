@@ -3885,11 +3885,11 @@ in the GNOME Display Manager's login screen can be enabled on the login
 screen by setting <code>banner-message-enable</code> to <code>true</code>.
 <br><br>
 To enable, add or edit <code>banner-message-enable</code> to
-<code>/etc/dconf/db/gdm.d/00-security-settings</code>. For example:
+<code>/etc/dconf/db/local.d/00-security-settings</code>. For example:
 <pre>[org/gnome/login-screen]
 banner-message-enable=true</pre>
 Once the setting has been added, add a lock to
-<code>/etc/dconf/db/gdm.d/locks/00-security-settings-lock</code> to prevent user modification.
+<code>/etc/dconf/db/local.d/locks/00-security-settings-lock</code> to prevent user modification.
 For example:
 <pre>/org/gnome/login-screen/banner-message-enable</pre>
 After the settings have been set, run <code>dconf update</code>.
@@ -3969,11 +3969,11 @@ where <i>APPROVED_BANNER</i> is the approved banner for your environment.
 <br><br>
 To enable, add or edit <code>banner-message-text</code> to
 
-<code>/etc/dconf/db/gdm.d/00-security-settings</code>. For example:
+<code>/etc/dconf/db/local.d/00-security-settings</code>. For example:
 <pre>[org/gnome/login-screen]
 banner-message-text='<i>APPROVED_BANNER</i>'</pre>
 Once the setting has been added, add a lock to
-<code>/etc/dconf/db/gdm.d/locks/00-security-settings-lock</code> to prevent user modification.
+<code>/etc/dconf/db/local.d/locks/00-security-settings-lock</code> to prevent user modification.
 For example:
 <pre>/org/gnome/login-screen/banner-message-text</pre>
 
