@@ -7772,13 +7772,14 @@ audit tools by running the following command:
 
 # sudo cat /etc/aide.conf | grep /usr/sbin/au
 
-/usr/sbin/auditctl p+i+n+u+g+s+b+acl+selinux+xattrs+sha512
-/usr/sbin/auditd p+i+n+u+g+s+b+acl+selinux+xattrs+sha512
-/usr/sbin/ausearch p+i+n+u+g+s+b+acl+selinux+xattrs+sha512
-/usr/sbin/aureport p+i+n+u+g+s+b+acl+selinux+xattrs+sha512
-/usr/sbin/autrace p+i+n+u+g+s+b+acl+selinux+xattrs+sha512
-/usr/sbin/audispd p+i+n+u+g+s+b+acl+selinux+xattrs+sha512
-/usr/sbin/augenrules p+i+n+u+g+s+b+acl+selinux+xattrs+sha512
+/usr/sbin/auditctl p+i+n+u+g+s+b+acl+xattrs+sha512
+/usr/sbin/auditd p+i+n+u+g+s+b+acl+xattrs+sha512
+/usr/sbin/ausearch p+i+n+u+g+s+b+acl+xattrs+sha512
+/usr/sbin/aureport p+i+n+u+g+s+b+acl+xattrs+sha512
+/usr/sbin/autrace p+i+n+u+g+s+b+acl+xattrs+sha512
+
+/usr/sbin/rsyslogd p+i+n+u+g+s+b+acl+xattrs+sha512
+/usr/sbin/augenrules p+i+n+u+g+s+b+acl+xattrs+sha512
 
 If AIDE is configured properly to protect the integrity of the audit tools,
 all lines listed above will be returned from the command.
