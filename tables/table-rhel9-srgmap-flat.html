@@ -17809,11 +17809,12 @@ restriction by running the following command:
 </td>
 <td>Applicable - Configurable</td>
 <td>Verify operating system enforces a 60-day maximum password lifetime restriction. If it does not, this is a finding.</td>
-<td>Check whether the maximum time period for existing passwords is restricted
-to 60 days by running the following command for each user:
-$ sudo chage -l USER | grep Maximum
-The output for each user should return something similary to the following:
-Maximum number of days between password change\t\t: 60
+<td>Check whether the maximum time period for existing passwords is restricted to 60 days with the following commands:
+
+
+$ sudo awk -F: '$5 &gt; 60 {print $1 "" "" $5}' /etc/shadow
+
+$ sudo awk -F: '$5 
       Is it the case that existing passwords are not configured correctly?
       </td>
 <td><fixtext xmlns="http://checklists.nist.gov/xccdf/1.1" fixref="F-3757r557621_fix">Configure operating system to enforce a 60-day maximum password lifetime restriction. </fixtext></td>

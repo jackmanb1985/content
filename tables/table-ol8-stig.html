@@ -4439,11 +4439,12 @@ passwords need to be changed periodically. If the operating system does
 not limit the lifetime of passwords and force users to change their
 passwords, there is the risk that the operating system passwords could be
 compromised.</pre></td>
-<td><pre>Check whether the maximum time period for existing passwords is restricted
-to 60 days by running the following command for each user:
-$ sudo chage -l USER | grep Maximum
-The output for each user should return something similary to the following:
-Maximum number of days between password change\t\t: 60
+<td><pre>Check whether the maximum time period for existing passwords is restricted to 60 days with the following commands:
+
+
+$ sudo awk -F: '$5 &gt; 60 {print $1 "" "" $5}' /etc/shadow
+
+$ sudo awk -F: '$5 
       Is it the case that existing passwords are not configured correctly?
       </pre></td>
 <td><pre>Configure non-compliant accounts to enforce a 60-day maximum password lifetime
