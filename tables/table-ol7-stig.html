@@ -1151,16 +1151,16 @@ should prevent users from being able to assign themselves empty passwords.</pre>
 <td>795</td>
 <td>medium</td>
 <td>The Oracle Linux operating system must disable account identifiers (individuals, groups, roles, and devices) if the password expires.</td>
-<td><pre>Disabling inactive accounts ensures that accounts which may not
-have been responsibly removed are not available to attackers
-who may have compromised their credentials.</pre></td>
+<td><pre>Inactive identifiers pose a risk to systems and applications because attackers may exploit an inactive identifier and potentially obtain undetected access to the system.
+Disabling inactive accounts ensures that accounts which may not have been responsibly removed are not available to attackers who may have compromised their credentials.
+Owners of inactive accounts will not notice if unauthorized access to their user account has been obtained.</pre></td>
 <td><pre>To verify the INACTIVE setting, run the following command:
 $ grep "INACTIVE" /etc/default/useradd
 The output should indicate the INACTIVE configuration option is set
 to an appropriate integer as shown in the example below:
 $ grep "INACTIVE" /etc/default/useradd
 INACTIVE=
-      Is it the case that the value of INACTIVE is greater than the expected value?
+      Is it the case that the value of INACTIVE is greater than the expected value or is -1?
       </pre></td>
 <td><pre>To specify the number of days after a password expires (which
 signifies inactivity) until an account is permanently disabled, add or correct
