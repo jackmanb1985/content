@@ -21,6 +21,7 @@ SPEC_OP_ID_TRANSLATION = {
     '<=': 'le_or_eq',
 }
 
+RE_MATCHES_PARAMETRIZED_PLATFORM = re.compile(r'\[(.+)\]')
 
 class Function(boolean.Function):
     """
@@ -69,7 +70,11 @@ class Symbol(boolean.Symbol):
 
     def __init__(self, obj):
         super(Symbol, self).__init__(obj)
-        self.spec = pkg_resources.Requirement.parse(obj)
+        parameter = RE_MATCHES_PARAMETRIZED_PLATFORM.search(obj)
+        if parameter:
+            self.spec = pkg_resources.Requirement.parse(parameter.groups()[0])
+        else:
+            self.spec = pkg_resources.Requirement.parse(obj)
         self.obj = self.spec
 
     def __call__(self, **kwargs):
