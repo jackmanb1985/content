@@ -35,7 +35,6 @@ dir_permissions_binary_dirs
 dir_perms_etc_httpd_conf
 dir_perms_var_log_httpd
 dir_perms_world_writable_system_owned
-dir_perms_world_writable_system_owned_group
 disable_anacron
 disable_logwatch_for_logserver
 disallow_bypass_password_sudo
@@ -160,7 +159,6 @@ package_cron_installed
 package_dovecot_removed
 package_httpd_removed
 package_inetutils-telnetd_removed
-package_krb5-server_removed
 package_net-snmp_removed
 package_nis_removed
 package_ntp_installed
